@@ -51,3 +51,18 @@ describe Verfal do
 	
 
 end
+
+
+describe "Comprobar que las preguntas son comparables" do
+
+	before :each do
+		@vf1 = Verfal.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego.")
+		@ss1 = Seleccionsimple.new("1.-) ¿Cuál es el tipo del objeto en el siguiente código Ruby?\n\tclass Objeto\n\tend",{a: "Una instancia de la clase Class", b: "Una constante", c: "Un objeto", d: "Ninguna de las anteriores"})
+	end
+	
+	describe "son dos preguntas de diferente tamaño?" do
+		it "es menor una que otra?" do
+			expect(@vf1<@ss1).to eq(true)
+		end
+	end
+end
