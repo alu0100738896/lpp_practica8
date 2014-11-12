@@ -8,6 +8,8 @@ Nodo = Struct.new(:prev, :value, :next) do
 end
 
 class List
+
+	include Enumerable
 	
 	attr_reader :inicio,:final
 
@@ -71,6 +73,15 @@ class List
 			insert_end(nodito)
 		end
 
+	end
+
+	def each
+
+		aux = @inicio
+		while (!aux.nil?) do
+			yield aux.value
+			aux = aux.next
+		end
 	end
 
 end
