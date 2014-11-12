@@ -1,6 +1,8 @@
 module Exam
 	class Exam
 
+		include Comparable
+
 		attr_accessor :pregunta, :respuestas
 
 		def initialize pregunta, respuestas
@@ -12,6 +14,10 @@ module Exam
 				preg += "#{k}) #{v}\n"
 			end
 			preg
+		end
+
+		def <=> other
+			self.pregunta.size <=> other.pregunta.size
 		end
 	end
 end
