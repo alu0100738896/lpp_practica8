@@ -84,4 +84,11 @@ describe List do
 		end
 	end
 	
+	describe "#La lista es enumerable" do
+		it "Mostrar los elementos de la lista mediente 'each'" do
+			@lista.insert_end_many(@n1,@n2)
+			expect(@lista.each { |x| puts x }).to eq("5\n8")
+		end
+	end
+	
 end
