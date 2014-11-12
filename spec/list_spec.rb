@@ -76,6 +76,12 @@ describe List do
 			@lista.insert_end_many(@n1,@n2)
 			expect(@lista.final.prev.value).to eq(5)
 		end
-	end	
+	end
+	
+	describe "# Los nodos son comparables" do
+		it "Comparar dos nodos" do
+		expect(@n1<@n2).to eq(true)
+		end
+	end
 	
 end
