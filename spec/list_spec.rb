@@ -85,9 +85,9 @@ describe List do
 	end
 	
 	describe "#La lista es enumerable" do
-		it "Mostrar los elementos de la lista mediente 'each'" do
+		it "Mostrar los elementos de la lista mediente 'collect'" do
 			@lista.insert_end_many(@n1,@n2)
-			expect(@lista.each { |x| puts x }).to eq("5\n8")
+			expect(@lista.map { |x| "#{x}" }).to eq(["5", "8"])
 		end
 	end
 	

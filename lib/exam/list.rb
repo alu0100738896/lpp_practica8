@@ -8,7 +8,7 @@ Nodo = Struct.new(:prev, :value, :next) do
 end
 
 class List
-
+	
 	attr_reader :inicio,:final
 
 	def initialize
