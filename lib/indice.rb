@@ -1,0 +1,5 @@
+require 'exam/exam'
+require 'exam/list'
+require 'exam/version'
+require 'exam/seleccionsimple'
+require 'exam/verfal'
