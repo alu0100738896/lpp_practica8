@@ -89,6 +89,14 @@ describe List do
 			@lista.insert_end_many(@n1,@n2)
 			expect(@lista.map { |x| "#{x}" }).to eq(["5", "8"])
 		end
+		it "Cual es el mayor elemento?" do
+			@lista.insert_end_many(@n1,@n2)
+			expect(@lista.max).to eq(8)
+		end
+		it "Cual es el primer elemento?" do
+			@lista.insert_end_many(@n1,@n2)
+			expect(@lista.first).to eq(5)
+		end
 	end
 	
 end
