@@ -64,5 +64,8 @@ describe "Comprobar que las preguntas son comparables" do
 		it "es menor una que otra?" do
 			expect(@vf1<@ss1).to eq(true)
 		end
+		it "son iguales dos preguntas?" do
+			expect(@vf1==@ss1).to eq(false)
+		end
 	end
 end
