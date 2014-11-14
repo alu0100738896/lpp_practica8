@@ -19,5 +19,9 @@ module Exam
 		def <=> other
 			self.pregunta.size <=> other.pregunta.size
 		end
+		
+		def == other
+			self.pregunta == other.pregunta
+		end
 	end
 end
