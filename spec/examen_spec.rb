@@ -32,7 +32,6 @@ describe Interfaz do
         @resp = [@vf1.respuestas[:a],@ss1.respuestas[:a]]
         @exa = Examen.new(@lista,@resp)
         @inter = Interfaz.new(@exa)
-        @elec = [@vf1.respuestas[:a],@ss1.respuestas[:a]]
     end
     describe "probando la clase interfaz" do
         it "se puede mostrar el examen de la interfaz" do
@@ -43,8 +42,11 @@ describe Interfaz do
             expect(@inter.soluciones).to eq("1.Cierto\n2.Una instancia de la clase Class\n")
         end
         
-       # it "mostrar interaccion" do
+        it "mostrar interaccion" do
+            @inter.interaccion
+            @inter.correccion
     #        expect(@inter.interaccion).to eq(true)
-     #   end
+        end
+        
     end
 end

@@ -26,4 +26,14 @@ class Interfaz
             aux = aux.next
         end
     end
+    
+    def correccion
+        @eleccion.each_with_index do |x,i|
+            if (x == @examen.respuestas[i]) 
+                puts "Pregunta #{i+1} correcta.\n"
+            else
+                puts "Pregunta #{i+1} incorrecta.\n"
+            end
+        end
+    end
 end
