@@ -34,7 +34,7 @@ describe Interfaz do
         @inter = Interfaz.new(@exa)
     end
     it "se puede mostrar el examen de la interfaz" do
-       expect(@inter.examen.preguntas.to_s).to eq("#{@n1.value}\n#{@n2.value}") 
+       expect(@inter.examen.preguntas.to_s).to eq("#{@n1.value}\n#{@n2.value}\n") 
     end
     
 end
