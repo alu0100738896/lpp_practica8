@@ -29,17 +29,18 @@ describe Interfaz do
         @n1 = Nodo.new(nil,@vf1,nil)
         @n2 = Nodo.new(nil,@ss1,nil)
         @lista.insert_end_many(@n1,@n2)
-        @resp = [:a,:a]
+        @resp = [@vf1.respuestas[:a],@ss1.respuestas[:a]]
         @exa = Examen.new(@lista,@resp)
         @inter = Interfaz.new(@exa)
-        @elec = [:a,:a]
+        @elec = [@vf1.respuestas[:a],@ss1.respuestas[:a]]
     end
-    it "se puede mostrar el examen de la interfaz" do
-       expect(@inter.examen.preguntas.to_s).to eq("#{@n1.value}\n#{@n2.value}\n") 
+    describe "probando la clase interfaz" do
+        it "se puede mostrar el examen de la interfaz" do
+           expect(@inter.examen.preguntas.to_s).to eq("#{@n1.value}\n#{@n2.value}\n") 
+        end
+        
+        it "mostrar soluciones" do
+            expect(@inter.soluciones).to eq("1.Cierto\n2.Una instancia de la clase Class\n")
+        end
     end
-    
-    it "mostrar soluciones"
-        expect(@inter.soluciones).to eq("1.Cierto\n2.Una instancia de la clase Class")
-    end
-    
 end
