@@ -1,6 +1,6 @@
 class Seleccionsimple < Exam::Exam
     
-    attr_accessor :pregnta, :respuestas
+    attr_accessor :pregunta, :respuestas
     
     def initialize pregunta, respuestas
         @pregunta,@respuestas = pregunta, respuestas
