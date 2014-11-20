@@ -12,7 +12,7 @@ describe Examen do
         @exa = Examen.new(@lista,@resp)
     end
     it "Se pueden mostrar las preguntas" do
-       # expect(@exa.preguntas.each { |x| puts x}).to eq("#{@n1.value}\n#{@n2.value}") 
+       #expect(@exa.preguntas.each { |x| puts x}).to eq("#{@n1.value}\n#{@n2.value}") 
         #expect(@exa.preguntas.first).to eq(@n1.value)
         expect(@exa.preguntas.to_s).to eq("#{@n1.value}\n#{@n2.value}\n")    
     
@@ -32,9 +32,14 @@ describe Interfaz do
         @resp = [:a,:a]
         @exa = Examen.new(@lista,@resp)
         @inter = Interfaz.new(@exa)
+        @elec = [:a,:a]
     end
     it "se puede mostrar el examen de la interfaz" do
        expect(@inter.examen.preguntas.to_s).to eq("#{@n1.value}\n#{@n2.value}\n") 
+    end
+    
+    it "mostrar soluciones"
+        expect(@inter.soluciones).to eq("1.Cierto\n2.Una instancia de la clase Class")
     end
     
 end
