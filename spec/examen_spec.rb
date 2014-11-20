@@ -42,5 +42,9 @@ describe Interfaz do
         it "mostrar soluciones" do
             expect(@inter.soluciones).to eq("1.Cierto\n2.Una instancia de la clase Class\n")
         end
+        
+       # it "mostrar interaccion" do
+    #        expect(@inter.interaccion).to eq(true)
+     #   end
     end
 end
