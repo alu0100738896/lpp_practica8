@@ -12,10 +12,10 @@ describe Examen do
         @exa = Examen.new(@lista,@resp)
     end
     it "Se pueden mostrar las preguntas" do
-    #expect(@exa.preguntas.to_s).to eq("#{@n1.value}#{@n2.value}")
-    expect(@exa.preguntas.first).to eq(@n1.value)
+       # expect(@exa.preguntas.each { |x| puts x}).to eq("#{@n1.value}\n#{@n2.value}") 
+        #expect(@exa.preguntas.first).to eq(@n1.value)
+        expect(@exa.preguntas.to_s).to eq("#{@n1.value}\n#{@n2.value}\n")    
     
-    #expect(@exa.preguntas.to_s).to eq("culo")
     end
     
     
