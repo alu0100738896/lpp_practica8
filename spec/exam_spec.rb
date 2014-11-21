@@ -1,5 +1,5 @@
-#require 'spec_helper'
 require 'indice'
+require 'spec_helper'
 
 describe Exam do
 

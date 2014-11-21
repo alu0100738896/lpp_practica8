@@ -1,4 +1,5 @@
 require 'indice'
+require 'spec_helper'
 
 describe Examen do
     before :each do
@@ -42,11 +43,11 @@ describe Interfaz do
             expect(@inter.soluciones).to eq("1.Cierto\n2.Una instancia de la clase Class\n")
         end
         
-        it "mostrar interaccion" do
-            @inter.interaccion
-            @inter.correccion
-    #        expect(@inter.interaccion).to eq(true)
-        end
+        #it "mostrar interaccion" do
+            #@inter.interaccion
+            #@inter.correccion
+            #expect(@inter.interaccion).to eq(true)
+        #end
         
     end
 end

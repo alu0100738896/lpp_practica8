@@ -1,4 +1,5 @@
 require 'indice'
+require 'spec_helper'
 
 describe List do
 
