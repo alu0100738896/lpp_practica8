@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'indice'
 require 'spec_helper'
 

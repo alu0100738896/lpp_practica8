@@ -44,10 +44,28 @@ describe Interfaz do
         end
         
         #it "mostrar interaccion" do
+            #susp = [m,m,m,b]
+            #aprobado = [b,b,m,m]
+            #sobre = [b,b,b,b]
             #@inter.interaccion
-            #@inter.correccion
+            #@inter.correccion(susp) true
             #expect(@inter.interaccion).to eq(true)
         #end
+        
+        it "corregiendo examen" do
+            
+            susp = [@vf1.respuestas[:b],@ss1.respuestas[:b]]
+            apro = [@vf1.respuestas[:a],@ss1.respuestas[:b]]
+            sobr = [@vf1.respuestas[:a],@ss1.respuestas[:a]]
+           
+            @inter.eleccion = susp
+            expect(@inter.correccion).to eq("Pregunta 1 incorrecta.\nPregunta 2 incorrecta.\nNota: Suspendido.\n")
+            @inter.eleccion = apro
+            expect(@inter.correccion).to eq("Pregunta 1 correcta.\nPregunta 2 incorrecta.\nNota: Aprobado.\n")
+            @inter.eleccion = sobr
+            expect(@inter.correccion).to eq("Pregunta 1 correcta.\nPregunta 2 correcta.\nNota: Sobresaliente.\n")
+        end
+        
         
     end
 end

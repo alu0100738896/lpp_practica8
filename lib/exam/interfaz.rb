@@ -1,6 +1,6 @@
 class Interfaz
    
-    attr_accessor :examen
+    attr_accessor :examen, :eleccion
     def initialize examen
        @examen = examen
        @eleccion = []
@@ -28,12 +28,26 @@ class Interfaz
     end
     
     def correccion
+        
+        cor = ""
+        contador = 0
+        
         @eleccion.each_with_index do |x,i|
             if (x == @examen.respuestas[i]) 
-                puts "Pregunta #{i+1} correcta.\n"
+                cor << "Pregunta #{i+1} correcta.\n"
+                contador+=1
             else
-                puts "Pregunta #{i+1} incorrecta.\n"
+                cor << "Pregunta #{i+1} incorrecta.\n"
             end
         end
+        
+        if contador == @eleccion.size
+            cor << "Nota: Sobresaliente.\n"
+        elsif contador >= @eleccion.size/2
+            cor << "Nota: Aprobado.\n"
+        else
+            cor << "Nota: Suspendido.\n"
+        end
+        cor
     end
 end
