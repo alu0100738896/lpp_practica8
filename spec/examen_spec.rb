@@ -58,5 +58,9 @@ describe Interfaz do
             expect(@inter.correccion).to eq("Pregunta 1 correcta.\nPregunta 2 correcta.\nNota: Sobresaliente.\n")
         end
         
+        it "mostrar las preguntas en orden inverso" do
+           expect(@inter.examen.to_reverse).to eq("#{@n2.value}\n#{@n1.value}\n") 
+        end
+        
     end
 end
