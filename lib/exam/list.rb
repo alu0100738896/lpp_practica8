@@ -35,17 +35,6 @@ class List
 	end	
 
 	def to_s
-=begin
-		msg = ""
-		aux = @inicio
-		while (!aux.nil?)
-			msg << "[#{aux.value}|"
-			msg << "#{aux.next.value}"  unless aux.next.nil?
-			msg << "] => "
-			aux = aux.next
-		end
-		msg
-=end
 		msg = ""
 		aux = @inicio
 		while (!aux.nil?)
@@ -59,9 +48,7 @@ class List
 		msg = ""
 		aux = @final
 		while (!aux.nil?)
-			msg << "[#{aux.value}|"
-			msg << "#{aux.prev.value}"  unless aux.prev.nil?
-			msg << "] <= "
+			msg << "#{aux.value}\n"
 			aux = aux.prev
 		end
 		msg
