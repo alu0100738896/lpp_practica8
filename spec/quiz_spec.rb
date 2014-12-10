@@ -7,7 +7,7 @@ describe Quiz do
     before :each do
        quiz = Quiz.new("Cuestionario LPP") do
             question '¿Cuantos argumentos de tipo bloque se le pueden pasar a un metodo?',
-            wrong: '0',
+            wrong: '4',
             right: '1',
             wrong: '2'
         
