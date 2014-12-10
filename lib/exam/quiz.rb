@@ -1,4 +1,4 @@
-class quiz
+class Quiz
     
 	attr_accessor :name, :questions, :answers
 
