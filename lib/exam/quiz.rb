@@ -49,4 +49,36 @@ class Quiz
 	end  	
     
     
+	def run eleccion
+
+		cor = ""
+
+		cor << "#{name}\n#{'=' * name.size}\n\n"
+		questions.each_with_index do |question, index|
+    		cor << "#{index+1}) #{question}\n"
+			cor << "Respuesta: #{eleccion[index]}\n"
+		end
+
+	    contador = 0
+		    
+	    eleccion.each_with_index do |x,i|
+	        if (x == answers[i][:right]) 
+	            cor << "Pregunta #{i+1} correcta.\n"
+	            contador+=1
+	        else
+	            cor << "Pregunta #{i+1} incorrecta.\n"
+	        end
+	    end
+	    
+	    if contador == eleccion.size
+	        cor << "Nota: Sobresaliente.\n"
+	    elsif contador >= eleccion.size/2
+	        cor << "Nota: Aprobado.\n"
+	    else
+	        cor << "Nota: Suspendido.\n"
+	    end
+	    cor
+	  end
+  
+    
 end
