@@ -6,7 +6,7 @@ class Quiz
 		@name = name
 		@questions = []
 		@answers = []
-		@i = 0
+		@correctas = []
 		@counter = 0
 
 		if block_given?  
@@ -28,26 +28,27 @@ class Quiz
   	end	
   	
 	def question(name, options = {})
-	
 		@counter = 0
-		q = name
-		answers << {}
-		answers[@i][:wrong] = []
-		
-		if options[:right]
-			answers[@i][:right] = options[:right]
-			q << "\n\t#{@counter+=1}) #{options[:right]}"
-		end
-		
-		if options[:wrong]
-			answers[@i][:wrong] << options[:wrong]
-			q << "\n\t#{@counter+=1}) #{options[:wrong]}"
-		end
-		
-		questions << q
-		  @i += 1
+	    q = name
+	    answers << options
+	
+	    options.each do | k,v |
+	        q << "\n\t#{k.first}) #{v}"
+	    end
+	
+	    questions << q
 	end  	
     
+	def wrong
+		@counter += 1
+		[@counter, :wrong]
+	end
+
+	def right
+		@counter += 1
+		@correctas << @counter
+		[@counter, :right]
+    end      
     
 	def run eleccion
 
@@ -62,7 +63,7 @@ class Quiz
 	    contador = 0
 		    
 	    eleccion.each_with_index do |x,i|
-	        if (x == answers[i][:right]) 
+	        if (x == answers[i][[@correctas[i],:right]]) 
 	            cor << "Pregunta #{i+1} correcta.\n"
 	            contador+=1
 	        else
@@ -79,6 +80,4 @@ class Quiz
 	    end
 	    cor
 	  end
-  
-    
 end
