@@ -24,8 +24,9 @@ describe Naranjero do
             expect(@naranjero.edad).to eq(1)     
         end
         it "vivo?" do
-            t1.join
-           expect(@naranjero.vivo).to eq(false)
+            @t1.run
+            sleep 0.1
+            expect(@naranjero.vivo).to eq(false)
         end
     end
 

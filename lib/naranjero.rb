@@ -8,12 +8,13 @@ class Naranjero
 		@naranjas = 0
 		@max_edad = 20
 		@adulto = 4
+		@vivo = true
 		@produccion = []
 		@mutex= Mutex.new
 	end
 	
 	def uno_mas	
-		if @edad <= @max_edad
+		if @edad < @max_edad
 			@edad += 1
 			@altura += 0.5
 			if @edad.between?(4,10)
@@ -26,6 +27,7 @@ class Naranjero
 		else
 			@mutex.synchronize { @naranjas = 0 }
 			@altura = 0
+			@vivo = false
 		end
 	end
 
@@ -35,6 +37,7 @@ class Naranjero
 		end
 		if @edad >= @max_edad
 			@mutex.synchronize { @naranjas = 0 }
+			@vivo = false
 			puts "El naranjo ha muerto."
 		elsif @naranjas == 0
 			puts "No hay naranjas."
