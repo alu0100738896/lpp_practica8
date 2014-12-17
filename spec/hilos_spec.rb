@@ -6,6 +6,16 @@ require 'spec_helper'
 describe Naranjero do
     before :each do
         @naranjero = Naranjero.new(0,0)
+        @t1 = Thread.new do
+            20.times do
+                @naranjero.uno_mas
+            end
+        end
+        @t2 = Thread.new do
+            20.times do
+                @naranjero.recolectar_una
+            end
+        end
     end
 
 end
