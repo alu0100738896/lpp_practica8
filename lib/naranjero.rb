@@ -43,5 +43,3 @@ class Naranjero
 		end
 	end
 end	
-    
-end

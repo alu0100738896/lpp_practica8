@@ -17,5 +17,16 @@ describe Naranjero do
             end
         end
     end
+    
+    describe "Aumentar_edad" do
+        it "edad" do
+            @naranjero.uno_mas
+            expect(@naranjero.edad).to eq(1)     
+        end
+        it "vivo?" do
+            t1.join
+           expect(@naranjero.vivo).to eq(false)
+        end
+    end
 
 end
